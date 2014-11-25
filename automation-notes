@@ -1,0 +1,37 @@
+the point for clock declaration:
+	val clock1 = Clock.make(), clock2 = Clock.make(), ..., clockn = Clock.make();
+	
+	Scheduler.addClock(clock1);
+	Scheduler.addClock(clock2);
+	...
+	Scheduler.addClock(clockn);
+
+	Scheduler.addPair(line1_1,line1_2);
+	Scheduler.addPair(line2_1,line2_2);
+	...
+	Scheduler.addPair(linen_1,linen_2);
+
+	Scheduler.initScheduler();
+	val seed = seedNumber;
+
+the point for assign a new thread for scheduler:
+	async clocked(clock1, clock2, ..., clockn){ /// here is the scheduler!
+		Scheduler.schedule(seed);
+	}
+the points for async clocked statements:
+	async clocked(clock1){
+the points for starting scheduler:
+	val thread = Scheduler.getThread(clock1);
+	thread.start();
+the points for exiting of each thread:
+	thread.exit();
+the points for dropping clocks:
+	clock1.drop();
+	clock2.drop();
+	...
+	clockn.drop();
+and the points for each statement to inject:
+	statement;
+		=> // the first line must be injected before statement!
+	thread.wait("statement", line_of_statement);
+	statement;

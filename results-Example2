@@ -1,0 +1,59 @@
+seed = 1
+2-2
+2-3
+2-4
+1-2
+1-3
+1-4
+3
+======
+seed = 2
+2-2
+2-3
+2-4
+1-2
+1-3
+1-4
+3
+======
+seed = 3
+1-2
+ERROR: actual race found with statement: line[3]: if(x == 6) raceValue = 3;
+Race statment1: line[4]: if (raceValue == 3) raceValue = 2;
+2-2
+2-3
+2-4
+1-3
+1-4
+3
+=====
+seed = 4
+2-2
+2-3
+2-4
+1-2
+1-3
+1-4
+3
+=====
+seed = 5
+1-2
+ERROR: actual race found with statement: line[3]: if(x == 6) raceValue = 3;
+Race statment1: line[4]: if (raceValue == 3) raceValue = 2;
+2-2
+2-3
+2-4
+1-3
+1-4
+3
+=====
+seed = 0
+1-2
+ERROR: actual race found with statement: line[3]: if(x == 6) raceValue = 3;
+Race statment1: line[4]: if (raceValue == 3) raceValue = 2;
+1-3
+1-4
+2-2
+2-3
+2-4
+2
